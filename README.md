@@ -3,3 +3,4 @@
 + [Java Basic Syntax](BasicSyntax.md#java-basic-syntax)
 + [OOP](OOP.md#oop)
 + [Collections-Lite](CollectionsLite.md#collections-lite)
++ [FP Lambda Stream API](FPLambdaStreamAPI.md#fp-lambda-stream-api)
