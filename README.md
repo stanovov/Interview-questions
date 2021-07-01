@@ -1,8 +1,8 @@
-## Вопросы для интервью по темам [Job4j](https://job4j.ru/ "https://job4j.ru")
+## Вопросы для подготовки к экзаменам на платформе [Job4j](https://job4j.ru/ "https://job4j.ru")
 
 ### Стажер:
 
-+ [Java Basic Syntax](BasicSyntax.md#java-basic-syntax)
++ [Java Basic Syntax](BasicSyntax.md#java-basic-syntax) ![icon][done]
 + [OOP](OOP.md#oop)
 + [Collections-Lite](CollectionsLite.md#collections-lite)
 + [FP Lambda Stream API](FPLambdaStreamAPI.md#fp-lambda-stream-api)
