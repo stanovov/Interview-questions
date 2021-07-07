@@ -569,10 +569,6 @@ dosView.setArchive(true);
 
 2. `FileOutputStream fos = new FileOutputStream("name.txt");`
 
-   `fos.write(fileData.getBytes());`
-
-   `fos.flush();`
-
    `fos.close();`
 
 3. `String fileData = "Pankaj Kumar";`
