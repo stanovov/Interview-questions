@@ -712,44 +712,55 @@ dosView.setArchive(true);
 
 ## 27. Как отправить через сокет сообщение?
 
+Самый простой способ обмена:
+
+На клиенте:
+
 ```java
-server = new ServerSocket(4004); // серверсокет прослушивает порт 4004
-clientSocket = server.accept(); // accept() будет ждать пока
-                
-try { // установив связь и воссоздав сокет для общения с клиентом можно перейти
-                    
-    in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream())); // и отправлять
-    out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
-    String word = in.readLine(); // ждём пока клиент что-нибудь нам напишет
-    System.out.println(word);
-    // не долго думая отвечает клиенту
-    out.write("Привет, это Сервер! Подтверждаю, вы написали : " + word + "\n");
-    out.flush(); // выталкиваем все из буфера
-    } finally { // в любом случае сокет будет закрыт
-        clientSocket.close();
-        // потоки тоже хорошо бы закрыть
-        in.close();
-        out.close();
+public static void main(String[] args) throws IOException {
+    Socket socket = new Socket("localhost", 8000);
+    BufferedReader in = new BufferedReader(
+            new InputStreamReader(
+                    socket.getInputStream()));
+    BufferedWriter out = new BufferedWriter(
+            new OutputStreamWriter(
+                    socket.getOutputStream()));
+
+    out.write("Hello, it's a client!");
+    out.newLine();
+    out.flush();
+    String word = in.readLine();
+    System.out.println("Server: " + word);
+
+    out.close();
+    in.close();
+    socket.close();
 }
 ```
 
-Создание клиента:
+На сервере:
 
 ```java
-// адрес - локальный хост, порт - 4004, такой же как у сервера
-clientSocket = new Socket("localhost", 4004); // этой строкой мы запрашиваем у сервера доступ на соединение
-reader = new BufferedReader(new InputStreamReader(System.in));
-in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream())); // читать соообщения с сервера
-out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream())); // писать туда же
+public static void main(String[] args) throws IOException {
+    ServerSocket serverSocket = new ServerSocket(8000);
+    Socket socket = serverSocket.accept();
+    BufferedReader in = new BufferedReader(
+            new InputStreamReader(
+                    socket.getInputStream()));
+    BufferedWriter out = new BufferedWriter(
+            new OutputStreamWriter(
+                    socket.getOutputStream()));
 
-// если соединение произошло и потоки успешно созданы - мы можем
-// работать дальше и предложить клиенту что то ввести
-// если нет - вылетит исключение
-String word = reader.readLine(); // ждём пока клиент что-нибудь не напишет в консоль
-out.write(word + "\n"); // отправляем сообщение на сервер
-out.flush();
-String serverWord = in.readLine(); // ждём, что скажет сервер
-System.out.println(serverWord); // получив - выводим на экран
+    String word = in.readLine();
+    System.out.println("Client: " + word);
+    out.write("Hello, it's a server!");
+    out.newLine();
+    out.flush();
+
+    out.close();
+    in.close();
+    socket.close();
+}
 ```
 
 [к оглавлению](#io)
