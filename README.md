@@ -11,7 +11,8 @@
 
 + [Структуры данных и алгаритмы](CollectionsPro.md#collections-pro) ![icon][done]
 + [Ввод-вывод](IO.md#io) ![icon][done]
-+ [SQL, JDBC](SQL.md#sql)
++ [SQL, JDBC](SQL.md#sql) ![icon][done]
++ [Garbage Collection](GQ.md#garbage-collection)
 
 [done]:done.png
 
