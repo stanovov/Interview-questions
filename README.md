@@ -17,8 +17,11 @@
 
 ### Мидл:
 
-+ [Multithreading](Multithreading.md#multithreading)
++ [Multithreading](Multithreading.md#multithreading) ![icon][done]
++ [Servlet JSP](ServletJSP.md#servlet-jsp)
 
 [done]:done.png
 
 Большая часть ответов взята отсюда: [johnivo](https://github.com/johnivo).
+
+И отсюда: [enhorse/java-interview](https://github.com/enhorse/java-interview).
