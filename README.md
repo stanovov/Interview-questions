@@ -18,7 +18,8 @@
 ### Мидл:
 
 + [Multithreading](Multithreading.md#multithreading) ![icon][done]
-+ [Servlet JSP](ServletJSP.md#servlet-jsp)
++ [Servlet JSP](ServletJSP.md#servlet-jsp) ![icon][done]
++ [Hibernate](Hibernate.md#hibernate)
 
 [done]:done.png
 
