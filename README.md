@@ -18,7 +18,7 @@
 ### Мидл:
 
 + [Git](Git.md#git) ![icon][done]
-+ [Multithreading](Multithreading.md#multithreading) ![icon][done]
++ [Thread](Thread.md#thread) ![icon][done]
 + [Servlet JSP](ServletJSP.md#servlet-jsp) ![icon][done]
 + [Hibernate](Hibernate.md#hibernate) ![icon][done]
 + [Spring](Spring.md#spring)
